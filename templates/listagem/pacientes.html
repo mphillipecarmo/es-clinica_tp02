@@ -1,0 +1,62 @@
+{% extends 'base-logon.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container" style="margin-top:80px;">
+		<div class="section-title">
+          <h2>Lista de Pacientes</h2>
+          <!--<p></p>-->
+        </div>
+        
+		{% if messages %}
+            {% for message in messages %}
+            <div class="{{ message.tags }}" role="alert">
+                {{message}}
+            </div>
+            {% endfor %}
+        {% endif %}
+		
+		<table class="table table-striped">
+		  <thead>
+			<tr>
+			  <th scope="col">Codigo</th>
+			  <th scope="col">Nome</th>
+			  <th scope="col">Email</th>
+			  <th scope="col">Telefone</th>
+			  <th scope="col">Peso</th>
+			  <th scope="col">Altura</th>
+			  <th scope="col">Tipo Sanguíneo</th>
+			  <th scope="col">CEP</th>
+			  <th scope="col">Logradouro</th>
+			  <th scope="col">Bairro</th>
+			  <th scope="col">Cidade</th>
+			  <th scope="col">Estado</th>	
+			</tr>
+		  </thead>
+		  <tbody>
+			{% for p in pacientes %}
+			<tr>
+			  <td>{{p.codigo}}</td>
+			  <td>{{p.nome}}</td>
+			  <td>{{p.email}}</td>
+			  <td>{{p.telefone}}</td>
+			  <td>{{p.peso}}</td>
+			  <td>{{p.altura}}</td>
+			  <td>{{p.tipoSanguineo}}</td>
+			  <td>{{p.cep}}</td>
+			  <td>{{p.logradouro}}</td>
+			  <td>{{p.bairro}}</td>
+			  <td>{{p.cidade}}</td>
+			  <td>{{p.estado}}</td>
+			</tr>
+			{% endfor %}
+		  </tbody>
+		</table>
+		
+      </div>
+    </section><!-- End Gallery Section -->
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base-logon.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container" style="margin-top:150px">
+        <div class="container">
+		  <div class="row">
+			<div class="rounded col card text-dark bg-light mb-6" style="margin: 20px;">
+			  <div class="card-header text-center"><i class="fas fa-users fa-3x"></i></div>
+			  <div class="card-body text-center">
+				<div class="card-link">
+					<a href="cadastro/funcionario"><h4>Cadastrar Funcionário</h4></a><br>
+				</div>	
+				<div class="card-link">
+					<a href="listagem/funcionarios"><h4>Listar Funcionários</h4></a>
+				</div>
+			  </div>
+			</div>
+			
+			<div class="rounded col card text-dark bg-light mb-6" style="margin: 20px;">
+			  <div class="card-header text-center"><i class="fas fa-user-injured fa-3x"></i></div>
+			  <div class="card-body text-center">
+				<div class="card-link">
+				<a class="card-link" href="cadastro/paciente"><h4>Cadastrar Paciente</h4></a><br>
+				</div>
+				<div class="card-link">
+					<a class="card-link" href="listagem/pacientes"><h4>Listar Pacientes</h4></a>
+				</div>
+			  </div>
+			</div>
+			
+			<div class="rounded col card text-dark bg-light mb-6" style="margin: 20px;">
+			  <div class="card-header text-center"><i class="fas fa-map-marked-alt fa-3x"></i></div>
+			  <div class="card-body text-center">
+				<div class="card-link">
+					<a class="card-link" href="listagem/enderecos"><h4>Listar Endereços</h4></a>
+				</div>
+			  </div>
+			</div>
+			
+			<div class="rounded col card text-dark bg-light mb-6" style="margin: 20px;">
+			  <div class="card-header text-center"><i class="fas fa-calendar-check fa-3x"></i></div>
+			  <div class="card-body text-center">
+				<div class="card-link">
+					<a class="card-link" href="listagem/agendamentos"><h4>Listar Agendamentos</h4></a>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<br>
+		
+      </div>
+    </section><!-- End Gallery Section -->
+
+{% endblock %}

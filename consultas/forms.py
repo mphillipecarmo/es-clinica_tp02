@@ -7,3 +7,8 @@ class FormEndereco(forms.Form):
     bairro = forms.CharField()
     cidade = forms.CharField()
     estado = forms.CharField()
+
+
+class FormLogin(forms.Form):
+    email = forms.CharField()
+    senha = forms.CharField()

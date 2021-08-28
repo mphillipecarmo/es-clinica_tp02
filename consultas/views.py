@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import FormEndereco
+from .forms import FormEndereco,FormLogin
 from django.contrib import messages
 from .models import *
 
@@ -25,7 +25,7 @@ def cadastrarEndereco(request):
             estado = form.cleaned_data['estado']
             
             endereco = Endereco(cep=cep, logradouro=logradouro, bairro=bairro, cidade=cidade, estado=estado)
-            #endereco.save()
+            endereco.save()
             
             messages.success(request, "Endereço cadastrado com sucesso!")
             return render(request, 'cadastro/endereco.html', {})

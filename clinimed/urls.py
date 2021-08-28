@@ -16,10 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from consultas.views import *
+from gerenciamento.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('galeria', galeria),
+    
     path('cadastro/endereco', cadastrarEndereco),
+    path('cadastro/funcionario', cadastrarFuncionario),
+    path('cadastro/paciente', cadastrarPaciente),
+    
+    path('listagem/funcionarios',listarFuncionarios),
+    path('listagem/pacientes',listarPacientes),
+    path('listagem/enderecos',listarEnderecos),
+    path('listagem/agendamentos',listarAgendamentos),
+    
+    path('login',login),
+    path('logout', logout),
+    path('gerenciamento', gerenciamento),
 ]

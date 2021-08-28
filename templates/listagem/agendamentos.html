@@ -1,0 +1,52 @@
+{% extends 'base-logon.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container" style="margin-top:80px;">
+		<div class="section-title">
+          <h2>Lista de Agendamentos</h2>
+          <!--<p></p>-->
+        </div>
+        
+		{% if messages %}
+            {% for message in messages %}
+            <div class="{{ message.tags }}" role="alert">
+                {{message}}
+            </div>
+            {% endfor %}
+        {% endif %}
+		
+		<table class="table table-striped">
+		  <thead>
+			<tr>
+			  <th scope="col">Codigo</th>
+			  <th scope="col">Data</th>
+			  <th scope="col">Horário</th>
+			  <th scope="col">Nome</th>
+			  <th scope="col">Email</th>
+			  <th scope="col">Telefone</th>
+			  <th scope="col">CodigoMedico</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			{% for a in agendamentos %}
+			<tr>
+			  <td>{{a.codigo}}</td>
+			  <td>{{a.data}}</td>
+			  <td>{{a.horario}}</td>
+			  <td>{{a.nome}}</td>
+			  <td>{{a.email}}</td>
+			  <td>{{a.telefone}}</td>
+			  <td>{{a.codigoMedico}}</td>
+			</tr>
+			{% endfor %}
+		  </tbody>
+		</table>
+		
+      </div>
+    </section><!-- End Gallery Section -->
+
+{% endblock %}
