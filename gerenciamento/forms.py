@@ -35,3 +35,16 @@ class FormFuncionario(forms.Form):
 class FormLogin(forms.Form):
     email = forms.CharField()
     senha = forms.CharField()
+    
+class FormPaciente(forms.Form):
+    nome = forms.CharField()
+    email = forms.CharField()
+    telefone = forms.CharField()
+    cep = forms.CharField()
+    logradouro = forms.CharField()
+    bairro = forms.CharField()
+    cidade = forms.CharField()
+    estado = forms.CharField()
+    peso = forms.CharField()
+    altura = forms.CharField()
+    tipoSanguineo = forms.CharField()

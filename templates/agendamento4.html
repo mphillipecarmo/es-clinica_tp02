@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container" style="margin-top:80px;width:20%">
+		<div class="section-title">
+          <h2>Agendar Consulta</h2>
+          <!--<p></p>-->
+        </div>
+        <form method='get' action='/agendamento'>
+			<div class="form-group"> <!-- Full Name -->
+				<label for="especialidade">Especialidade:</label>
+				<select required name="especialidade" class="form-select">
+					<option selected readonly value='{{especialidade}}'>{{especialidade}}</option>
+				</select>
+			</div>	
+			<div class="form-group"> <!-- Full Name -->
+				<label for="medico">Médico:</label>
+				<select required name="medico" class="form-select">
+					<option selected readonly value='{{medico.codigo}}'>{{medico.nome}}</option>
+				</select>
+			</div>
+			<div class="form-group"> <!-- Full Name -->
+				<label for="data" class="control-label">Data:</label>
+				<input type="date" class="form-control" name="data" value="{{data}}" readonly required>
+			</div>
+			<div class="form-group"> <!-- Full Name -->
+				<label for="horario">Escolha a Hora:</label>
+				<select required name="horario" class="form-select">
+					<option disabled selected value></option>
+					{% for horario in horariosLivres %}
+					<option value='{{horario}}'>{{horario}}:00</option>
+					{% endfor %}
+				</select>
+			</div>
+			<br>
+			<div class="form-group"> <!-- Submit Button -->
+				<button type="submit" class="btn btn-primary">Continuar</button>
+				<button onclick="window.history.back();" class="btn btn-secondary">Voltar</button>
+			</div>    
+		</form>
+	</div>
+		<br>
+		{% if messages %}
+            {% for message in messages %}
+            <div class="{{ message.tags }}" role="alert">
+                {{message}}
+            </div>
+            {% endfor %}
+        {% endif %}
+      </div>
+    </section><!-- End Gallery Section -->
+
+{% endblock %}

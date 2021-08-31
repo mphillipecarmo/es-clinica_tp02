@@ -35,4 +35,5 @@ urlpatterns = [
     path('login',login),
     path('logout', logout),
     path('gerenciamento', gerenciamento),
+    path('agendamento',agendamento),
 ]

@@ -10,7 +10,7 @@ class Endereco(models.Model):
 class Agendamento(models.Model):
     codigo = models.IntegerField(primary_key=True)
     data = models.DateField()
-    horario = models.TimeField()
+    horario = models.TextField()
     nome = models.TextField()
     email = models.TextField()
     telefone = models.TextField()

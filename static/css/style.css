@@ -430,7 +430,7 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#hero {
+#home {
   width: 100%;
   height: 100vh;
   background-color: rgba(60, 60, 60, 0.8);
@@ -438,7 +438,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
-#hero .carousel, #hero .carousel-inner, #hero .carousel-item, #hero .carousel-item::before {
+#home .carousel, #home .carousel-inner, #home .carousel-item, #home .carousel-item::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -446,7 +446,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
 }
 
-#hero .carousel-item {
+#home .carousel-item {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -455,7 +455,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: flex-end;
 }
 
-#hero .container {
+#home .container {
   text-align: center;
   background: rgba(255, 255, 255, 0.9);
   padding-top: 30px;
@@ -465,51 +465,51 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 1200px) {
-  #hero .container {
+  #home .container {
     margin-left: 50px;
     margin-right: 50px;
   }
 }
 
-#hero h2 {
+#home h2 {
   color: #2f2f2f;
   margin-bottom: 20px;
   font-size: 36px;
   font-weight: 700;
 }
 
-#hero p {
+#home p {
   margin: 0 auto 30px auto;
   color: #555555;
 }
 
-#hero .carousel-inner .carousel-item {
+#home .carousel-inner .carousel-item {
   transition-property: opacity;
   background-position: center top;
 }
 
-#hero .carousel-inner .carousel-item,
-#hero .carousel-inner .active.carousel-item-start,
-#hero .carousel-inner .active.carousel-item-end {
+#home .carousel-inner .carousel-item,
+#home .carousel-inner .active.carousel-item-start,
+#home .carousel-inner .active.carousel-item-end {
   opacity: 0;
 }
 
-#hero .carousel-inner .active,
-#hero .carousel-inner .carousel-item-next.carousel-item-start,
-#hero .carousel-inner .carousel-item-prev.carousel-item-end {
+#home .carousel-inner .active,
+#home .carousel-inner .carousel-item-next.carousel-item-start,
+#home .carousel-inner .carousel-item-prev.carousel-item-end {
   opacity: 1;
   transition: 0.5s;
 }
 
-#hero .carousel-inner .carousel-item-next,
-#hero .carousel-inner .carousel-item-prev,
-#hero .carousel-inner .active.carousel-item-start,
-#hero .carousel-inner .active.carousel-item-end {
+#home .carousel-inner .carousel-item-next,
+#home .carousel-inner .carousel-item-prev,
+#home .carousel-inner .active.carousel-item-start,
+#home .carousel-inner .active.carousel-item-end {
   left: 0;
   transform: translate3d(0, 0, 0);
 }
 
-#hero .carousel-control-next-icon, #hero .carousel-control-prev-icon {
+#home .carousel-control-next-icon, #home .carousel-control-prev-icon {
   background: none;
   font-size: 30px;
   line-height: 0;
@@ -526,12 +526,12 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
 }
 
-#hero .carousel-control-next-icon:hover, #hero .carousel-control-prev-icon:hover {
+#home .carousel-control-next-icon:hover, #home .carousel-control-prev-icon:hover {
   background: #3fbbc0;
   color: rgba(255, 255, 255, 0.8);
 }
 
-#hero .carousel-indicators li {
+#home .carousel-indicators li {
   cursor: pointer;
   background: #fff;
   overflow: hidden;
@@ -543,12 +543,12 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
 }
 
-#hero .carousel-indicators li.active {
+#home .carousel-indicators li.active {
   opacity: 1;
   background: #3fbbc0;
 }
 
-#hero .btn-get-started {
+#home .btn-get-started {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -562,33 +562,33 @@ h1, h2, h3, h4, h5, h6 {
   background: #3fbbc0;
 }
 
-#hero .btn-get-started:hover {
+#home .btn-get-started:hover {
   background: #65c9cd;
 }
 
 @media (max-width: 992px) {
-  #hero {
+  #home {
     height: 100vh;
   }
-  #hero .container {
+  #home .container {
     margin-top: 100px;
   }
 }
 
 @media (max-width: 768px) {
-  #hero h2 {
+  #home h2 {
     font-size: 28px;
   }
 }
 
 @media (min-width: 1024px) {
-  #hero .carousel-control-prev, #hero .carousel-control-next {
+  #home .carousel-control-prev, #home .carousel-control-next {
     width: 5%;
   }
 }
 
 @media (max-height: 500px) {
-  #hero {
+  #home {
     height: 160vh;
   }
 }
@@ -798,27 +798,27 @@ section {
 /*--------------------------------------------------------------
 # About Us
 --------------------------------------------------------------*/
-.about .content h3 {
+.sobre .content h3 {
   font-weight: 600;
   font-size: 26px;
 }
 
-.about .content ul {
+.sobre .content ul {
   list-style: none;
   padding: 0;
 }
 
-.about .content ul li {
+.sobre .content ul li {
   padding-bottom: 10px;
 }
 
-.about .content ul i {
+.sobre .content ul i {
   font-size: 20px;
   padding-right: 4px;
   color: #3fbbc0;
 }
 
-.about .content p:last-child {
+.sobre .content p:last-child {
   margin-bottom: 0;
 }
 
@@ -903,12 +903,12 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-.services .icon-box {
+.servicos .icon-box {
   margin-bottom: 20px;
   text-align: center;
 }
 
-.services .icon {
+.servicos .icon {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -923,16 +923,16 @@ section {
   box-shadow: 0px 0 25px rgba(0, 0, 0, 0.15);
 }
 
-.services .icon i {
+.servicos .icon i {
   font-size: 36px;
   line-height: 0;
 }
 
-.services .icon-box:hover .icon {
+.servicos .icon-box:hover .icon {
   box-shadow: 0px 0 25px rgba(63, 187, 192, 0.3);
 }
 
-.services .title {
+.servicos .title {
   font-weight: 600;
   margin-bottom: 15px;
   font-size: 18px;
@@ -940,16 +940,16 @@ section {
   padding-bottom: 15px;
 }
 
-.services .title a {
+.servicos .title a {
   color: #444444;
   transition: 0.3s;
 }
 
-.services .title a:hover {
+.servicos .title a:hover {
   color: #3fbbc0;
 }
 
-.services .title::after {
+.servicos .title::after {
   content: '';
   position: absolute;
   display: block;
@@ -960,7 +960,7 @@ section {
   left: calc(50% - 25px);
 }
 
-.services .description {
+.servicos .description {
   line-height: 24px;
   font-size: 14px;
 }
@@ -1061,11 +1061,11 @@ section {
 /*--------------------------------------------------------------
 # Departments
 --------------------------------------------------------------*/
-.departments .nav-tabs {
+.departamentos .nav-tabs {
   border: 0;
 }
 
-.departments .nav-link {
+.departamentos .nav-link {
   border: 0;
   padding: 20px;
   color: #555555;
@@ -1074,61 +1074,61 @@ section {
   cursor: pointer;
 }
 
-.departments .nav-link h4 {
+.departamentos .nav-link h4 {
   font-size: 18px;
   font-weight: 600;
   transition: 0.3s;
 }
 
-.departments .nav-link p {
+.departamentos .nav-link p {
   font-size: 14px;
   margin-bottom: 0;
 }
 
-.departments .nav-link:hover h4 {
+.departamentos .nav-link:hover h4 {
   color: #3fbbc0;
 }
 
-.departments .nav-link.active {
+.departamentos .nav-link.active {
   background: #f7fcfc;
   border-color: #3fbbc0;
 }
 
-.departments .nav-link.active h4 {
+.departamentos .nav-link.active h4 {
   color: #3fbbc0;
 }
 
-.departments .tab-pane.active {
+.departamentos .tab-pane.active {
   -webkit-animation: slide-down 0.5s ease-out;
   animation: slide-down 0.5s ease-out;
 }
 
-.departments .tab-pane img {
+.departamentos .tab-pane img {
   float: left;
   max-width: 300px;
   padding: 0 15px 15px 0;
 }
 
 @media (max-width: 768px) {
-  .departments .tab-pane img {
+  .departamentos .tab-pane img {
     float: none;
     padding: 0 0 15px 0;
     max-width: 100%;
   }
 }
 
-.departments .tab-pane h3 {
+.departamentos .tab-pane h3 {
   font-size: 26px;
   font-weight: 600;
   margin-bottom: 20px;
   color: #3fbbc0;
 }
 
-.departments .tab-pane p {
+.departamentos .tab-pane p {
   color: #777777;
 }
 
-.departments .tab-pane p:last-child {
+.departamentos .tab-pane p:last-child {
   margin-bottom: 0;
 }
 
@@ -1229,7 +1229,7 @@ section {
 /*--------------------------------------------------------------
 # Doctors
 --------------------------------------------------------------*/
-.doctors .member {
+.doutores .member {
   margin-bottom: 20px;
   overflow: hidden;
   text-align: center;
@@ -1238,12 +1238,12 @@ section {
   box-shadow: 0px 2px 15px rgba(63, 187, 192, 0.1);
 }
 
-.doctors .member .member-img {
+.doutores .member .member-img {
   position: relative;
   overflow: hidden;
 }
 
-.doctors .member .social {
+.doutores .member .social {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -1257,7 +1257,7 @@ section {
   justify-content: center;
 }
 
-.doctors .member .social a {
+.doutores .member .social a {
   transition: color 0.3s;
   color: #555555;
   margin: 0 10px;
@@ -1266,61 +1266,61 @@ section {
   justify-content: center;
 }
 
-.doctors .member .social a i {
+.doutores .member .social a i {
   line-height: 0;
 }
 
-.doctors .member .social a:hover {
+.doutores .member .social a:hover {
   color: #3fbbc0;
 }
 
-.doctors .member .social i {
+.doutores .member .social i {
   font-size: 18px;
   margin: 0 2px;
 }
 
-.doctors .member .member-info {
+.doutores .member .member-info {
   padding: 25px 15px;
 }
 
-.doctors .member .member-info h4 {
+.doutores .member .member-info h4 {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 18px;
   color: #555555;
 }
 
-.doctors .member .member-info span {
+.doutores .member .member-info span {
   display: block;
   font-size: 13px;
   font-weight: 400;
   color: #aaaaaa;
 }
 
-.doctors .member .member-info p {
+.doutores .member .member-info p {
   font-style: italic;
   font-size: 14px;
   line-height: 26px;
   color: #777777;
 }
 
-.doctors .member:hover .social {
+.doutores .member:hover .social {
   opacity: 1;
 }
 
 /*--------------------------------------------------------------
 # Gallery
 --------------------------------------------------------------*/
-.gallery {
+.galeria {
   overflow: hidden;
 }
 
-.gallery .swiper-pagination {
+.galeria .swiper-pagination {
   margin-top: 20px;
   position: relative;
 }
 
-.gallery .swiper-pagination .swiper-pagination-bullet {
+.galeria .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -1328,19 +1328,19 @@ section {
   border: 1px solid #3fbbc0;
 }
 
-.gallery .swiper-pagination .swiper-pagination-bullet-active {
+.galeria .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #3fbbc0;
 }
 
-.gallery .swiper-slide-active {
+.galeria .swiper-slide-active {
   text-align: center;
 }
 
 @media (min-width: 992px) {
-  .gallery .swiper-wrapper {
+  .galeria .swiper-wrapper {
     padding: 40px 0;
   }
-  .gallery .swiper-slide-active {
+  .galeria .swiper-slide-active {
     border: 6px solid #3fbbc0;
     padding: 4px;
     background: #fff;

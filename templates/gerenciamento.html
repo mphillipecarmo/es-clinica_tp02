@@ -41,14 +41,23 @@
 			  </div>
 			</div>
 			
+			
 			<div class="rounded col card text-dark bg-light mb-6" style="margin: 20px;">
 			  <div class="card-header text-center"><i class="fas fa-calendar-check fa-3x"></i></div>
 			  <div class="card-body text-center">
 				<div class="card-link">
-					<a class="card-link" href="listagem/agendamentos"><h4>Listar Agendamentos</h4></a>
+					<a class="card-link" href="listagem/agendamentos"><h4>Listar Todos os Agendamentos{{a}}</h4></a>
 				</div>
+				{% if medico %}
+				{% for funcionario in funcionario %}
+					<div class="card-link">
+						<a class="card-link" href="listagem/agendamentos?codigo={{funcionario.codigo}}"><h4>Listar Agendamentos</h4></a>
+					</div>
+				{% endfor %}	
+				{% endif %}
 			  </div>
 			</div>
+			
 		  </div>
 		</div>
 		<br>

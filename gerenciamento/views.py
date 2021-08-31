@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import FormLogin, FormFuncionario, FormFuncionario1
+from .forms import FormLogin, FormFuncionario, FormFuncionario1, FormPaciente
 from django.db.models import Max
 from .models import *
 from django.contrib import messages
@@ -40,11 +40,19 @@ def gerenciamento(request):
         emailFuncionario = request.session['emailFuncionario']
         senhaHash = request.session['senhaHash']
         
-        funcionario = Funcionario.objects.filter(email=emailFuncionario,senhaHash=senhaHash)
+        funcionario = Funcionario.objects.filter(email=emailFuncionario,senhaHash=senhaHash)    
+        
+        if(len(Medico.objects.filter(email=emailFuncionario,senhaHash=senhaHash)) == 1):
+            medico = True
+        else:
+            medico = False
         
         context = {
             'funcionario': funcionario,
+            'medico' : medico
         }
+        
+        #pdb.set_trace()
         
         return render(request, 'gerenciamento.html', context)
     except KeyError:
@@ -96,9 +104,9 @@ def cadastrarFuncionario(request):
                         }
                         messages.warning(request, "CEP não encontrado. Preencha os campos restantes:")
                         return render(request, 'cadastro/funcionario2.html', context)
-                    pdb.set_trace()
+                    #pdb.set_trace()
             elif (request.POST['etapa'] == '2'):
-                pdb.set_trace()
+                #pdb.set_trace()
                 form = FormFuncionario(request.POST)
                 if form.is_valid():
                     nome = form.cleaned_data['nome']
@@ -125,7 +133,11 @@ def cadastrarFuncionario(request):
                         messages.error(request, "A senha e confirmação de senha não correspondem")
                         return render(request, 'cadastro/funcionario.html', {})
                     else:    
-                        codigo = Funcionario.objects.aggregate(Max('codigo'))['codigo__max'] + 1
+                        try:
+                            codigo = Funcionario.objects.aggregate(Max('codigo'))['codigo__max'] + 1
+                        except TypeError:
+                            codigo = 1
+                        
                         
                         if(medico == 'sim'):
                             medico = Medico(crm=crm, especialidade=especialidade, codigo=codigo, nome=nome, email=email, telefone=telefone, dataContrato=dataContrato, 
@@ -174,8 +186,11 @@ def cadastrarPaciente(request):
                 bairro = form.cleaned_data['bairro']
                 cidade = form.cleaned_data['cidade']
                 estado = form.cleaned_data['estado']
-  
-                codigo = Paciente.objects.aggregate(Max('codigo'))['codigo__max'] + 1
+                
+                try:
+                    codigo = Paciente.objects.aggregate(Max('codigo'))['codigo__max'] + 1
+                except TypeError:
+                    codigo = 1
                 
                 paciente = Paciente(codigo=codigo, nome=nome, email=email, telefone=telefone, peso=peso, altura=altura, 
                 tipoSanguineo=tipoSanguineo, cep=cep, logradouro=logradouro, bairro=bairro, cidade=cidade, estado=estado)
@@ -202,10 +217,22 @@ def listarFuncionarios(request):
         funcionario = Funcionario.objects.filter(email=emailFuncionario,senhaHash=senhaHash)
         
         
+        
         funcionarios = Funcionario.objects.all()
+        
+        funcionariosNaoMedicos = []
+        
+        for f in funcionarios:
+            if (len(Medico.objects.filter(codigo=f.codigo)) == 0):
+                funcionariosNaoMedicos.append(f)
+                
+        
+        medicos = Medico.objects.all()
+        
         context = {
-            'funcionarios': funcionarios,
+            'funcionarios': funcionariosNaoMedicos,
             'funcionario': funcionario,
+            'medicos' : medicos,
         }
         return render(request, 'listagem/funcionarios.html', context)
     except KeyError:
@@ -254,8 +281,23 @@ def listarAgendamentos(request):
         funcionario = Funcionario.objects.filter(email=emailFuncionario,senhaHash=senhaHash)
         
         agendamentos = Agendamento.objects.all()
+        
+        reservas = []
+        
+        for a in agendamentos:
+            reserva = {}
+            reserva['codigo'] = a.codigo
+            reserva['data'] = a.data
+            reserva['horario'] = a.horario
+            reserva['nome'] = a.nome
+            reserva['email'] = a.email
+            reserva['telefone'] = a.telefone
+            reserva['nomeMedico'] = Medico.objects.filter(codigo=a.codigoMedico)[0].nome
+            reserva['especialidade'] = Medico.objects.filter(codigo=a.codigoMedico)[0].especialidade
+            reservas.append(reserva)
+        
         context = {
-            'agendamentos': agendamentos,
+            'agendamentos': reservas,
             'funcionario': funcionario,
         }
         return render(request, 'listagem/agendamentos.html', context)
