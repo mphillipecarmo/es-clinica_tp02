@@ -134,7 +134,7 @@ def cadastrarFuncionario(request):
                         return render(request, 'cadastro/funcionario.html', {})
                     else:    
                         try:
-                            codigo = Funcionario.objects.aggregate(Max('codigo'))['codigo__max'] + 1
+                            codigo = Pessoa.objects.aggregate(Max('codigo'))['codigo__max'] + 1
                         except TypeError:
                             codigo = 1
                         
@@ -188,7 +188,7 @@ def cadastrarPaciente(request):
                 estado = form.cleaned_data['estado']
                 
                 try:
-                    codigo = Paciente.objects.aggregate(Max('codigo'))['codigo__max'] + 1
+                    codigo = Pessoa.objects.aggregate(Max('codigo'))['codigo__max'] + 1
                 except TypeError:
                     codigo = 1
                 
